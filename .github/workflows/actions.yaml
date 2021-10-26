@@ -1,0 +1,22 @@
+name: redeploy hugo
+on:
+  push:
+    branches:
+      - main
+jobs:
+  regenerate site:
+    runs-on: ubuntu-latest
+    steps:
+      - run: hugo
+  push:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+        cd public
+        git add -A
+        msg="rebuilding site `date`"
+        if [ $# -eq 1 ]
+          then msg="$1"
+        fi
+        git commit -m "$msg"
+        git push origin main
