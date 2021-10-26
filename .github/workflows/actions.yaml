@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: hugo
-  push:
+  push to pages repo:
     runs-on: ubuntu-latest
     steps:
       - run: |
