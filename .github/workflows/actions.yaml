@@ -4,12 +4,13 @@ on:
     branches:
       - main
 jobs:
-  regenerate site:
+  regenerate-site:
     runs-on: ubuntu-latest
     steps:
       - run: hugo
-  push to pages repo:
+  push-to-pages-repo:
     runs-on: ubuntu-latest
+    needs: regenerate-site
     steps:
       - run: |
           cd public
