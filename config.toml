@@ -1,0 +1,4 @@
+baseURL = "http://dhanangw.github.io/"
+languageCode = "en-us"
+title = "dhanangw writings"
+theme = "etch"
